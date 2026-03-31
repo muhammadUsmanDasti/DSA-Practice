@@ -1,0 +1,23 @@
+# Compiled executables
+*.exe
+*.out
+*.o
+*.obj
+
+# VS Code settings (optional: remove the ! lines if you WANT to share your editor settings)
+.vscode/
+
+# Compiler/build cache
+*.pdb
+*.ilk
+*.exp
+*.lib
+
+# OS generated files
+.DS_Store        # Mac
+Thumbs.db        # Windows
+desktop.ini      # Windows
+
+# Temp / log files
+*.log
+*.tmp
