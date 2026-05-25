@@ -1,0 +1,39 @@
+// Task 2: Adjacency List Representation 
+// Write a program to represent the same graph using an adjacency list. 
+// Requirements 
+// • Use array/vector of linked lists or vectors  
+// • Display each vertex and its connected neighbors  
+// Example Output 
+// 0 -> 1 -> 2 
+// 1 -> 0 -> 2 
+// 2 -> 0 -> 1 -> 3 
+// 3 -> 2 
+#include<iostream>
+#include<vector>
+using namespace std;
+class node{
+    int data;
+    node *next;
+    node(int data){
+        data = data;
+    }
+};
+void CreateAdjacencyList(){
+    int vertices;
+    int edges;
+    cout<<"Enter the number of Vertices: ";
+    cin>>vertices;
+    cout<<"Enter the number of Edges: ";
+    cin>>edges;
+    vector<node> *addresses;
+    for(int i=0;i<edges;i++){
+        int start,end;
+        cout<<"Enter the edge: "<<"(start end) :";
+        cin>>start>>end;
+        addresses[i];
+        
+    }
+}
+int main(){
+
+}
