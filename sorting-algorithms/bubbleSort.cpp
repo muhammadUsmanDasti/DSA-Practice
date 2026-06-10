@@ -10,27 +10,28 @@ void print_array(int arr[],int size){
     }
     cout<<endl;
 }
-void selection_sort(int arr[],int size){
-    
-    for(int i=0;i<size-1;i++){
-        int min_index = i;
-        for(int j=i+1;j<size;j++){
-            if(arr[j]<arr[min_index]){
-                min_index = j;
+void bubbleSort(int arr[], int size){
+    for (int i=0;i<size-1;i++){
+        bool flag = false;
+        for(int j=0;j<size-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                swap(arr[j],arr[j+1]);
+                flag = true;
             }
         }
-        if(i!=min_index){
-            swap(arr[i],arr[min_index]);
+        if(flag==false){
+            break;
         }
     }
 }
 int main(){
-    int arr[6]={2,7,4,1,5,3};
+    int arr[6]={2,7,3,1,5,4};
     int size = sizeof(arr)/sizeof(arr[0]);
     cout<<"Unsorted: ";
     print_array(arr,size);
-    selection_sort(arr,size);
-    cout<<"sorted: ";
-    print_array(arr,size);
+    bubbleSort(arr,size);
+    cout<<"Sorted: ";
+    print_array(arr , size);
+
     return 0;
 }
