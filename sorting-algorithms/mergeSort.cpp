@@ -1,49 +1,65 @@
 #include<iostream>
 using namespace std;
-void print_array(int arr[]){
-    int size = sizeof(arr)/sizeof(arr[0]);
+void printArray(int arr[],int size){
     for (int i=0;i<size;i++){
         cout<<arr[i];
         if(i<size-1){
-            cout<<",";
+        cout<<",";
         }
     }
     cout<<endl;
 }
-void merge(int arr[],int L[],int R[]){
-    int size_of_L = sizeof(L)/sizeof(L[0]);
-    int size_of_R = sizeof(R)/sizeof(R[0]);
-    int i,j,k =0;
+void merge(int arr[], int L[],int R[],int size){
+    int size_of_arr = size;
+    int size_of_L = size/2;
+    int size_of_R = size-size_of_L;
+    int i=0,j=0,k =0;
     while(i<size_of_L&&j<size_of_R){
         if(L[i]<R[j]){
             arr[k]=L[i];
             i++;
         }
         else{
-            if(R[j]<L[i]){
-                arr[k]=R[j];
-                j++;
-            }
+            arr[k]=R[j];
+            j++;
         }
         k++;
     }
     while(i<size_of_L){
         arr[k]=L[i];
+        i++;
+        k++;
     }
     while(j<size_of_R){
         arr[k]=R[j];
+        j++;
+        k++;
     }
 }
-void mergeSort(int arr[]){
-
+void mergeSort(int arr[],int size){
+    if(size<2){
+        return;
+    }
+    int mid=size/2;
+    int L[mid];
+    int R[size-mid];
+    for(int i=0;i<mid;i++){
+        L[i]=arr[i];
+    }
+    for(int j=mid;j<size;j++){
+        R[j-mid]=arr[j];
+    }
+    mergeSort(L,mid);
+    mergeSort(R,size-mid);
+    merge(arr,L,R,size);
 }
 int main(){
-    int arr[8]={2,4,1,6,8,5,3,7};
+    int arr[9] = {2,4,3,11,7,1,5,6,10};
+    int size = sizeof(arr)/sizeof(arr[0]);
     cout<<"Unsorted: ";
-    print_array(arr);
-    mergeSort(arr);
+    printArray(arr, size);
+    mergeSort(arr,size);
     cout<<"Sorted: ";
-    print_array(arr);
+    printArray(arr,size);
     return 0;
-
 }
