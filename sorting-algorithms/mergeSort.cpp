@@ -15,7 +15,7 @@ void merge(int arr[], int L[],int R[],int size){
     int size_of_R = size-size_of_L;
     int i=0,j=0,k =0;
     while(i<size_of_L&&j<size_of_R){
-        if(L[i]<R[j]){
+        if(L[i]<=R[j]){
             arr[k]=L[i];
             i++;
         }
@@ -54,7 +54,7 @@ void mergeSort(int arr[],int size){
     merge(arr,L,R,size);
 }
 int main(){
-    int arr[9] = {2,4,3,11,7,1,5,6,10};
+    int arr[10] = {2,6,4,3,11,7,1,5,6,10};
     int size = sizeof(arr)/sizeof(arr[0]);
     cout<<"Unsorted: ";
     printArray(arr, size);
