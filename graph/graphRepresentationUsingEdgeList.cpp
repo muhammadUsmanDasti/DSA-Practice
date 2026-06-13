@@ -22,8 +22,6 @@ struct edge{
 vector<edge> createEdgeList(){
     vector<edge> edgeList;
     int v,e;
-    cout<<"Enter the number of vertices: ";
-    cin>>v;
     cout<<"Enter the number of edges: ";
     cin>>e;
     
