@@ -9,11 +9,11 @@ vector<vector<int>> createAdjacencyMatrix(){
     cin>>e;
     vector<vector<int>> adjacencyMatrix(v, vector<int>(v, 0));
     for(int i=0;i<e;i++){
-        int start,end;
-        cout<<"Enter the "<<i<<" edge: (start,end): ";
-        cin>>start>>end;
-        adjacencyMatrix[start][end] = 1;
-        adjacencyMatrix[end][start] = 1;  //remove this for the directed graph
+        int start,end, weight;
+        cout<<"Enter the "<<i<<" edge: (start,end,weight): ";
+        cin>>start>>end>>weight;
+        adjacencyMatrix[start][end] = weight;
+        adjacencyMatrix[end][start] = weight;  //remove this for the directed graph
     }
     return adjacencyMatrix;
 
